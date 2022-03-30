@@ -35,3 +35,6 @@ build/
 
 ### Maven ###
 .mvn/
+
+### Other ###
+src/main/resources/secure-connect-email-app.zip
