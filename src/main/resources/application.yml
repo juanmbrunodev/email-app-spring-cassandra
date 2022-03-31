@@ -1,4 +1,6 @@
 spring:
+  application:
+    name: email-application
   security:
     oauth2:
       client:
@@ -6,3 +8,27 @@ spring:
           github:
             client-id: Iv1.ea15b01875598f0c
             client-secret: c975a8025655f2729ac73fd462589af4d65945a6
+
+  # Apache Cassandra connection settings
+  data:
+    cassandra:
+      keyspace-name: main
+      # Credentials should be securely introduced but leaving now for dev purposes
+      username: #passed as spring app property during start up
+      password: #passed as spring app property during start up
+      schema-action: create-if-not-exists
+      request:
+        timeout: 10s
+      connection:
+        connect-timeout: 10s
+        init-query-timeout: 10s
+
+  # Datastax AstraDB properties
+  astra.db:
+    id: 992f0c47-9c33-418c-9ebb-eee5f37c64a0-1
+    region: us-east1
+    keyspace: main
+    application.token: AstraCS:yBPWooySesjPiCKMEjUbyDvE:c691dceb684549bf9249f779647471344edfa733be1fac7c69bb0fd8012f5738
+
+  datastax.astra:
+    secure-connect-bundle: secure-connect-email-app.zip
