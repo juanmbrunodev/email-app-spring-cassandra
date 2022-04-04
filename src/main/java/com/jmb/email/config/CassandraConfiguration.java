@@ -1,4 +1,4 @@
-package com.jmb.config;
+package com.jmb.email.config;
 
 import org.springframework.boot.autoconfigure.cassandra.CqlSessionBuilderCustomizer;
 import org.springframework.context.annotation.Bean;

@@ -1,7 +1,9 @@
-package com.jmb.config;
+package com.jmb.email.config;
 
 import lombok.Data;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.Configuration;
 
 import java.io.File;
 
@@ -10,6 +12,7 @@ import java.io.File;
  * secure connection bundle.
  */
 @Data
+@Configuration
 @ConfigurationProperties(prefix = "datastax.astra")
 public class DataStaxAstraProperties {
 
