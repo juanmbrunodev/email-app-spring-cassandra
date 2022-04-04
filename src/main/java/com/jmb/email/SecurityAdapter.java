@@ -1,4 +1,4 @@
-package com.jmb;
+package com.jmb.email;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpStatus;
