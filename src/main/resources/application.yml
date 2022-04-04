@@ -6,17 +6,17 @@
         client:
           registration:
             github:
-              client-id: Iv1.ea15b01875598f0c
-              client-secret: c975a8025655f2729ac73fd462589af4d65945a6
+              client-id: <Complete me>
+              client-secret: <Complete me>
 
     # Apache Cassandra connection settings
     data:
       cassandra:
         keyspace-name: main
         # Credentials should be securely introduced but leaving now for dev purposes
-        username:
-        password:
-        schema-action: create-if-not-exists
+        username: yBPWooySesjPiCKMEjUbyDvE
+        password: <Complete me>
+        schema-action: <Complete me>
         request:
           timeout: 10s
         connection:
