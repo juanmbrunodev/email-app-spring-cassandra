@@ -3,6 +3,7 @@ package com.jmb.email.controller;
 import com.jmb.email.dictionaries.Pages;
 import com.jmb.email.model.Folder;
 import com.jmb.email.persistence.FolderRepository;
+import com.jmb.email.service.FolderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.oauth2.core.user.OAuth2User;
@@ -17,8 +18,12 @@ import java.util.Objects;
 @Controller
 public class InboxController {
 
+  //TODO: Put in constructor, for unit tests later.
   @Autowired
   private FolderRepository folderRepository;
+
+  @Autowired
+  FolderService folderService;
 
   @GetMapping("/")
   public String home(@AuthenticationPrincipal OAuth2User authenticatedPrincipal, Model model) {
@@ -32,6 +37,7 @@ public class InboxController {
     //Login is the ID from the Github Oauth2 login
     String userId = authenticatedPrincipal.getAttribute("login");
     List<Folder> userFolders = folderRepository.findAllByUserId(userId);
+    model.addAttribute("defaultFolders", folderService.defaultFolders(userId));
     model.addAttribute("userFolders", userFolders);
     return Pages.INBOX_FOLDERS.getPage();
 
