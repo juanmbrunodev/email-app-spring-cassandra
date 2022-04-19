@@ -22,8 +22,10 @@ public class EmailApplication {
 
 	@PostConstruct
 	public void init() {
-		folderRepository.save(new Folder("juanmbrunodev", "Inbox", "Blue"));
-		folderRepository.save(new Folder("juanmbrunodev", "Prog", "Green"));
-		folderRepository.save(new Folder("juanmbrunodev", "Sent", "Yellow"));
+		/* Initial versions persists this to Cassandra until adding folder functionality is done.
+		Uncomment to have the code below do that */
+//		folderRepository.save(new Folder("juanmbrunodev", "Coding", "Blue"));
+//		folderRepository.save(new Folder("juanmbrunodev", "Testing", "Green"));
+//		folderRepository.save(new Folder("juanmbrunodev", "Feeds", "Yellow"));
 	}
 }

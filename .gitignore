@@ -38,3 +38,4 @@ build/
 
 ### Other ###
 src/main/resources/secure-connect-email-app.zip
+src/main/resources/application.yml
