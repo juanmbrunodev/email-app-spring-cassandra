@@ -71,7 +71,22 @@
 
     <main>
         <!-- Main content -->
-        <p>Emails</p>
+        <!--TODO: Extract below to a separate Thymeleaf component -->
+        <div class="card" th:if="${emailItems}">
+            <div class="card-header">Emails</div>
+            <div class="card-body">
+                <div class="list-group">
+                    <a th:each="emailItem : ${emailItems}"
+                       href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1" th:text="${emailItem.subject}">Item Heading</h5>
+                            <small th:text="${emailItem.timeAgoString}">Days ago</small>
+                        </div>
+                        <p class="mb-1" th:text="'To: ' + ${emailItem.to}">To</p>
+                    </a>
+                </div>
+            </div>
+        </div>
     </main>
 
     <aside>
